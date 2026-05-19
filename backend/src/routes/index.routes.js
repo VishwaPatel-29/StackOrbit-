@@ -10,6 +10,7 @@ const { workflowBookmarkRouter, bookmarkRouter } = require("./bookmark.routes");
 const commentRoutes = require("./comment.routes");
 const reviewRoutes  = require("./review.routes");
 const userRoutes    = require("./user.routes");
+const tagRoutes     = require("./tag.routes");
 
 router.use("/auth", authRoutes);
 router.use("/workflows", workflowQueryRoutes);       // /latest, /popular, /recommended, /trending
@@ -20,5 +21,6 @@ router.use("/comments", commentRoutes);              // /comments/:workflowId, /
 router.use("/reviews",  reviewRoutes);               // /reviews/:workflowId,  /reviews/:reviewId
 router.use("/users",    userRoutes);                 // /users/me (GET, PATCH)
 router.use("/search", searchRoutes);
+router.use("/tags",   tagRoutes);           // /tags (GET, POST)
 
 module.exports = router;
